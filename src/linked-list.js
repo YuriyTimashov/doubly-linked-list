@@ -8,6 +8,7 @@ class LinkedList {
 
     append(data) {
      var node = new Node(data);
+        
      if (this._head == null) {
          this._head = this._tail = node;
      } else {
@@ -15,6 +16,7 @@ class LinkedList {
          node.prev = this._tail;
          this._tail = node;
      }
+        
      this.length++;
      return this;
      }
@@ -60,6 +62,7 @@ class LinkedList {
         currentNode.next = node;
         node.prev = currentNode;
       }
+        
       this.length += 1;
       return this;
     }
@@ -76,6 +79,7 @@ class LinkedList {
 
     deleteAt(index) {
       if (index < 0 || index > this.length) {throw new Error('Node with this index doesn\'t belong to this list')}
+        
       if(index == 0) {
         this._head = this._head.next;
       } else {
@@ -94,6 +98,7 @@ class LinkedList {
 
     reverse() {
       var currentNode = this._head;
+        
       while (currentNode) {
          var temp = currentNode.next;
          currentNode.next = currentNode.prev;
@@ -103,12 +108,14 @@ class LinkedList {
       var tmp = this._tail;
       this._tail = this._head;
       this._head = tmp;
+        
       return this;
     }
 
     indexOf(data) {
       var currentNode = this._head;
       var index = 0;
+        
       while(currentNode) {
         if (currentNode.data == data) {
           return index;;
