@@ -118,7 +118,7 @@ class LinkedList {
         
       while(currentNode) {
         if (currentNode.data == data) {
-          return index;;
+          return index;
         }
         currentNode = currentNode.next;
         index += 1;
